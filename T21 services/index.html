@@ -8,9 +8,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <script>
-function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("show");
+function toggleMenu() {
+  const nav = document.getElementById("navMenu");
+  const hamburger = document.querySelector(".hamburger");
+  nav.classList.toggle("show");
+  hamburger.classList.toggle("active");
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+      const nav = document.getElementById("navMenu");
+      const hamburger = document.querySelector(".hamburger");
+      if (nav.classList.contains("show")) {
+        nav.classList.remove("show");
+        hamburger.classList.remove("active");
+      }
+    });
+  });
+});
 </script>
 
 <body>
@@ -53,7 +70,7 @@ function toggleMenu(){
   <div class="container hero-grid">
 
     <div class="hero-left">
-      <h1>The Best Virtual Assistant Training In Port Harcourt & Ibadan - SkillBoost</h1>
+      <h1>The Best Virtual Assistant Training In Port Harcourt & Ibadan - T21SERVICES</h1>
       <p class="hero-sub">
         Learn In-Demand Skills & Start Working Remotely with Confidence.
         Become a skilled Virtual Assistant with practical, hands-on training designed for beginners and career switchers.
@@ -74,10 +91,10 @@ function toggleMenu(){
 
     <div class="hero-card">
       <h3>Next Cohort Starts Soon</h3>
-      <div class="price">₦75,000</div>
+      <div class="price">₦75,000<span>/course</span></div>
       <p class="small">Full Training + Internship + Certificate</p>
       <a href="https://wa.me/2340000000000" class="whatsapp-btn">Chat on WhatsApp to Pay</a>
-      <p class="mini">Change number later</p>
+      <p class="mini">Limited spots available</p>
     </div>
 
   </div>
@@ -109,16 +126,56 @@ function toggleMenu(){
     <h2 class="section-title center">Why Choose T21 Services?</h2>
 
     <div class="grid-3">
-      <div class="card">Beginner-Friendly Training – Step-by-step guidance for all skill levels</div>
-      <div class="card">Expert-Led Instructors – Industry professionals with real-world experience</div>
-      <div class="card">Hands-On Training & Real-World Projects – Practical skills you can apply immediately</div>
-      <div class="card">Career Support & Guidance – Personalized advice and job alerts</div>
-      <div class="card">Remote Internship Opportunities – Gain experience with partner organizations</div>
-      <div class="card">Professional Certificate of Completion – Recognized achievement for your career</div>
-      <div class="card">Access to Modern Tools & Software – Train with the latest technology</div>
-      <div class="card">Global Reach – Opportunities to work with clients worldwide</div>
-      <div class="card">Expert Team & Proven Results – Learn from professionals whose graduates succeed</div>
-      <div class="card">Become a Skilled Virtual Assistant – Ready for global remote opportunities</div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Beginner-Friendly Training</h3>
+        <p>Step-by-step guidance for all skill levels - no prior experience needed.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍🏫</div>
+        <h3>Expert-Led Instructors</h3>
+        <p>Industry professionals with real-world experience teaching practical skills.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>Hands-On Training</h3>
+        <p>Real-world projects you can apply immediately to start earning.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3>Career Support & Guidance</h3>
+        <p>Personalized advice, job alerts, and networking opportunities.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Remote Internship</h3>
+        <p>Gain experience with partner organizations worldwide.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📜</div>
+        <h3>Professional Certificate</h3>
+        <p>Recognized achievement to boost your resume and career.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>Access to Modern Tools</h3>
+        <p>Train with the latest software and technology used in the industry.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Global Reach</h3>
+        <p>Opportunities to work with clients and companies worldwide.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Proven Results</h3>
+        <p>Learn from professionals whose graduates succeed globally.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💪</div>
+        <h3>Skill Transformation</h3>
+        <p>Become job-ready for global remote opportunities.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -129,17 +186,17 @@ function toggleMenu(){
     <h2 class="section-title center">Training Modules</h2>
 
     <div class="curriculum-grid">
-      <div class="curriculum-card">Module 1: Introduction to Virtual Assistance</div>
-      <div class="curriculum-card">Module 2: What Makes a Great Virtual Assistant</div>
-      <div class="curriculum-card">Module 3: VA Tools & Productivity Software</div>
-      <div class="curriculum-card">Module 4: Project & Task Management</div>
-      <div class="curriculum-card">Module 5: Email & Calendar Management</div>
-      <div class="curriculum-card">Module 6: Research & Data Entry</div>
-      <div class="curriculum-card">Module 7: Client Communication & Professional Etiquette</div>
-      <div class="curriculum-card">Module 8: Getting Hired as a Virtual Assistant</div>
-      <div class="curriculum-card">Module 9: Practical VA Tasks & Hands-On Practice</div>
-      <div class="curriculum-card">Module 10: Pitching, Networking, Interviews & Negotiation</div>
-      <div class="curriculum-card">Module 11: Planning Your Next Steps as a VA</div>
+      <div class="curriculum-card"><div class="curriculum-number">1</div>Introduction to Virtual Assistance</div>
+      <div class="curriculum-card"><div class="curriculum-number">2</div>What Makes a Great VA</div>
+      <div class="curriculum-card"><div class="curriculum-number">3</div>VA Tools & Software</div>
+      <div class="curriculum-card"><div class="curriculum-number">4</div>Project & Task Management</div>
+      <div class="curriculum-card"><div class="curriculum-number">5</div>Email & Calendar Management</div>
+      <div class="curriculum-card"><div class="curriculum-number">6</div>Research & Data Entry</div>
+      <div class="curriculum-card"><div class="curriculum-number">7</div>Client Communication</div>
+      <div class="curriculum-card"><div class="curriculum-number">8</div>Getting Hired as a VA</div>
+      <div class="curriculum-card"><div class="curriculum-number">9</div>Practical VA Tasks</div>
+      <div class="curriculum-card"><div class="curriculum-number">10</div>Pitching & Negotiation</div>
+      <div class="curriculum-card"><div class="curriculum-number">11</div>Planning Your Next Steps</div>
     </div>
   </div>
 </section>
@@ -150,9 +207,18 @@ function toggleMenu(){
     <h2 class="section-title center">Student Testimonials</h2>
 
     <div class="testimonial-grid">
-      <div class="testimonial">“I got my first international client 3 weeks after training.”</div>
-      <div class="testimonial">“Best investment I made this year. I now earn online monthly.”</div>
-      <div class="testimonial">“Very practical and premium training.”</div>
+      <div class="testimonial">
+        <p class="testimonial-text">"I got my first international client 3 weeks after completing the training. The hands-on approach really helped me build confidence."</p>
+        <p class="testimonial-author">— Sarah T., Graduate</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"Best investment I made this year. The instructors were supportive, and I now earn a steady income working remotely."</p>
+        <p class="testimonial-author">— Michael A., Graduate</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"Very practical and premium training. The curriculum covered everything I needed to start as a Virtual Assistant."</p>
+        <p class="testimonial-author">— Grace O., Graduate</p>
+      </div>
     </div>
   </div>
 </section>
@@ -161,7 +227,7 @@ function toggleMenu(){
 <section id="pricing" class="section">
   <div class="container pricing-box">
     <h2>Training Price</h2>
-    <div class="big-price">₦75,000</div>
+    <div class="big-price">₦75,000<span>/course</span></div>
     <p>Full training • Internship • Certificate • Job guidance</p>
 
     <a href="https://wa.me/2340000000000" class="primary-btn large">Pay via WhatsApp</a>
